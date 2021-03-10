@@ -52,18 +52,7 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet var segmentedControl: UISegmentedControl!
-    var number = 10
-    func isnumbergreaterthan10(number: Int) throws -> Bool
-    {
-        if(number>10)
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
-    }
+    
     
     let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
     var dataTask: URLSessionDataTask?

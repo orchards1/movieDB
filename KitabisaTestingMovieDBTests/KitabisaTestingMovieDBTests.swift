@@ -11,6 +11,7 @@ import XCTest
 class KitabisaTestingMovieDBTests: XCTestCase {
 
     var viewController: ViewController!
+    var detailVC : DetailViewController!
     
     override func setUpWithError() throws {
         
@@ -26,7 +27,10 @@ class KitabisaTestingMovieDBTests: XCTestCase {
     }
 
     func testExample() throws {
-        XCTAssertTrue(try viewController.isnumbergreaterthan10(number: 11))
+        
+        //Test klo berhasil fetch movies
+        XCTAssertNotNil(viewController.arrayMovies)
+        
     }
 
     func testPerformanceExample() throws {
