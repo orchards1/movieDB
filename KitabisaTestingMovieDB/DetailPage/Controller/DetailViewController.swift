@@ -17,7 +17,9 @@ class DetailViewController: UIViewController {
             let alert = UIAlertController(title: "Removed from Favorites", message: "This Movie has been deleted from favorite list", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
+           
             deleteMovieFromCoreData()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadFav"), object: nil)
         }
         else
         {

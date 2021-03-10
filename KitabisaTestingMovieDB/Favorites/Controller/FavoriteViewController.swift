@@ -15,12 +15,18 @@ class FavoriteViewController: UIViewController {
     var selectedMovie : Movie?
     
     override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: NSNotification.Name(rawValue: "loadFav"), object: nil)
         super.viewDidLoad()
         self.title = "Favorites"
         self.navigationItem.rightBarButtonItem = nil
         setupTableView()
         fetchFavorites()
         // Do any additional setup after loading the view.
+    }
+    @objc func reloadView()
+    {
+        fetchFavorites()
+        tableView.reloadData()
     }
     var FavoriteMovies: [Movie] = []
     func fetchFavorites()
